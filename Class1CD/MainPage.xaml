@@ -1,41 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Class1CD.MainPage">
+             x:Class="MauiBreakout2.MainPage" x:Name="gameField"
+             xmlns:local="clr-namespace:MauiBreakout2">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+  <ScrollView x:Name="viewArea">
+    <AbsoluteLayout x:Name="gameArea" HorizontalOptions="Fill">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+      <AbsoluteLayout.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnTapped" NumberOfTapsRequired="1"/>
+      </AbsoluteLayout.GestureRecognizers>
+      
+      <local:Background x:Name="background" />
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+      <Label x:Name="testLabel" Text="TEST" BackgroundColor="Black"/>
+      
+      <local:Sun AbsoluteLayout.LayoutBounds="20,20,150,150"
+                 x:Name="sun"/>
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+      <local:Rainbow AbsoluteLayout.LayoutBounds="700,150,350,350"
+                     x:Name="rainbow"/>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+      <local:Cloud Source="cloud.png"
+                   AbsoluteLayout.LayoutBounds="0,0,100,100"
+                   x:Name="cloud"/>
 
-        </VerticalStackLayout>
-    </ScrollView>
+      <local:Cloud Source="cloud2.png"
+                   AbsoluteLayout.LayoutBounds="200,30,150,150"
+                   x:Name="cloud2"/>
 
+      <local:Cloud Source="cloud.png"
+                   AbsoluteLayout.LayoutBounds="200,30,50,50"
+                   x:Name="cloud3"/>
+
+      <local:Cloud Source="cloud.png"
+                   AbsoluteLayout.LayoutBounds="0,0,200,200"
+                   x:Name="cloud4"/>
+
+      <local:Plane AbsoluteLayout.LayoutBounds="200,40,250,250"
+                   x:Name="plane"/>
+
+      <local:Plane AbsoluteLayout.LayoutBounds="300,40,50,50"
+                   x:Name="plane2"/>
+
+      <local:Cactus AbsoluteLayout.LayoutBounds="20,430,100,100"
+                    x:Name="cactus"/>
+
+      <local:Croco AbsoluteLayout.LayoutBounds="1200,600,300,125"
+                   x:Name="croco"/>
+
+      <local:Boris AbsoluteLayout.LayoutBounds="250,250,100,160"
+                   x:Name="boris"/>
+
+      <local:Bird AbsoluteLayout.LayoutBounds="0,0,100,100"
+                  x:Name="bird"/>
+
+      <!--<Label Text="0000" x:Name="score" TextColor="Black"/>-->
+    </AbsoluteLayout>
+  </ScrollView>
 </ContentPage>

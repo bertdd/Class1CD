@@ -1,9 +1,10 @@
-﻿namespace Class1CD;
-
-public partial class AppShell : Shell
+﻿namespace MauiBreakout2
 {
-	public AppShell()
-	{
-		InitializeComponent();
-	}
+  public partial class AppShell : Shell
+  {
+    public AppShell()
+    {
+      InitializeComponent();
+    }
+  }
 }
