@@ -51,6 +51,7 @@
       croco.MoveHorizontal(gameArea, -0.5);
       rainbow.Tick();
       sun.Turn();
+      boris.Jump(gameArea, 400, 10);
     }
 
     readonly private PlayerControl Control = new();
